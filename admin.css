@@ -1,0 +1,279 @@
+/* ============================================
+   Nes-Vision Admin — dashboard styles
+   Ugyanaz a paletta, mint a fő oldalon
+   ============================================ */
+
+.admin-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Login screen ---------- */
+.login-shell {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.login-card {
+  background: var(--paper-panel);
+  border: 1px solid var(--rule-strong);
+  border-radius: 8px;
+  padding: 48px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+.login-card .mark-lg {
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--clay-dark);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  color: var(--clay-dark);
+  margin: 0 auto 20px;
+}
+.login-card h1 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  margin: 0 0 8px;
+}
+.login-card p {
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  margin: 0 0 28px;
+}
+.login-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--sage-dark);
+  color: var(--paper);
+  border: none;
+  font-family: var(--mono);
+  font-size: 14px;
+  padding: 13px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.login-btn:hover { background: var(--ink); }
+.login-note {
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  opacity: 0.8;
+}
+
+/* ---------- Dashboard shell ---------- */
+.admin-shell { display: none; flex: 1; min-height: 100vh; }
+.admin-shell.active { display: flex; }
+
+.admin-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--paper-panel);
+  border-right: 1px solid var(--rule-strong);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.admin-sidebar .brand { margin-bottom: 28px; }
+.new-post-btn {
+  width: 100%;
+  background: var(--sage-dark);
+  color: var(--paper);
+  border: none;
+  font-family: var(--mono);
+  font-size: 13.5px;
+  padding: 11px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 24px;
+  text-align: left;
+}
+.new-post-btn:hover { background: var(--ink); }
+
+.post-list { list-style: none; margin: 0; padding: 0; flex: 1; overflow-y: auto; }
+.post-item {
+  padding: 12px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 4px;
+}
+.post-item:hover { background: rgba(0,0,0,0.04); }
+.post-item.active { background: var(--paper); border: 1px solid var(--rule-strong); }
+.post-item .p-title {
+  font-family: var(--display);
+  font-size: 14.5px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.post-item .p-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.status-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  display: inline-block;
+}
+.status-dot.published { background: var(--sage-dark); }
+.status-dot.draft { background: var(--clay-dark); opacity: 0.6; }
+
+.admin-user {
+  border-top: 1px solid var(--rule-strong);
+  padding-top: 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin-user button {
+  background: none; border: none; color: var(--ink-soft);
+  cursor: pointer; text-decoration: underline; font-family: var(--mono); font-size: 12px;
+}
+
+/* ---------- Editor main area ---------- */
+.admin-main {
+  flex: 1;
+  padding: 36px 44px 60px;
+  overflow-y: auto;
+  max-width: 860px;
+}
+.editor-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.editor-topbar .tag {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.mug-publish {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--clay);
+  color: var(--paper);
+  border: none;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 11px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.12s, background 0.15s;
+}
+.mug-publish:hover { background: var(--clay-dark); }
+.mug-publish:active { transform: scale(0.97); }
+.mug-publish svg { flex-shrink: 0; }
+
+.field-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+.title-input {
+  width: 100%;
+  font-family: var(--display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--ink);
+  margin-bottom: 24px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--rule-strong);
+}
+.title-input:focus { outline: none; border-color: var(--sage-dark); }
+.body-input {
+  width: 100%;
+  min-height: 320px;
+  font-family: var(--body);
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--paper-panel);
+  border: 1px solid var(--rule-strong);
+  border-radius: 5px;
+  padding: 20px;
+  resize: vertical;
+  margin-bottom: 30px;
+}
+.body-input:focus { outline: none; border-color: var(--sage-dark); }
+
+.toast {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: var(--sage-dark);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 13.5px;
+  padding: 12px 20px;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+}
+.toast.show { opacity: 1; transform: translateY(0); }
+
+/* ---------- Comments preview under the mug button ---------- */
+.comments-preview { margin-top: 8px; }
+.comments-preview h4 {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+}
+.comment-row {
+  display: flex;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--rule);
+}
+.comment-row:first-of-type { border-top: none; }
+.comment-avatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--sage);
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 12px; color: var(--paper);
+}
+.comment-body .c-name {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--ink);
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.comment-body .c-text { font-size: 14px; color: var(--ink-soft); margin: 0; }
+
+@media (max-width: 780px) {
+  .admin-shell.active { flex-direction: column; }
+  .admin-sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--rule-strong); }
+  .admin-main { padding: 28px 20px 60px; }
+}
